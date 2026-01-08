@@ -11,6 +11,13 @@
 #include "phonesort.h"
 #include "phoneupdate.h"
 
+/*
+Türkçe-İngilizce Dil Desteği
+Regex ile Numara Kontrolü
+Farklı Ülke Kodlarını Ekleme 
+*/
+
+
 int main() {
     int choice=0;
     char searchName[20];
@@ -19,9 +26,9 @@ int main() {
     menu();
 
     do{
-        printf("\n\n Select your action: ");
+        printf("\n\n Select your action (1-6): ");
         scanf("%d",&choice);
-        if(choice > 4 || choice < 1){
+        if(choice > 5 || choice < 1){
             printf("Error, please enter a number!\n");
             system("pause");
             return 0;
@@ -53,17 +60,21 @@ int main() {
                     printf("There are %d records.",searchResult);
                 }
                 break;
-        case 4: printf("\nYou logged out, have a nice day.\n"); 
+        case 4: phoneSort();
+                printf("\nPhone numbers are sorted successfully.\n");  
+                break;          
+        case 5: printf("You will change your record!\n");
+                phoneUpdate();
+                break;
+        case 6: printf("\nYou logged out, have a nice day.\n"); 
                 system("pause");
                 return 0;
                 break;
-        default: printf("\nPlease write a number between 1-4\n");
+        default: printf("\nPlease write a number between 1-6\n");
     }
-    }while(choice!=4);
+    }while(choice!=6);
 
 
     system("pause");
     return 0;
 }
-
-
