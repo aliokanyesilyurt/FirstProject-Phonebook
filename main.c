@@ -8,6 +8,8 @@
 #include "phoneadd.h"
 #include "phonelist.h"
 #include "phonesearch.h"
+#include "phonesort.h"
+#include "phoneupdate.h"
 
 int main() {
     int choice=0;
@@ -63,4 +65,5 @@ int main() {
     system("pause");
     return 0;
 }
+
 
